@@ -1,0 +1,24 @@
+Astuces travail de groupe 
+
+sur Unity :
+
+1) Chacun sa scène
+Ce n'est pas grave d'avoir plusieurs scènes par personne, hésitez pas d'ailleurs à reprendre régulièrement ce qu'il se fait sur la scène principale
+
+2) Ranger derrière soit
+Au bout d'un moment ca va forcement devenir le bordel, autant que ca soit le plus tard possible. Par défaut je range par type puis par thème dans les dossiers (ex : Dossier scripts -> Dossier PlayerScripts ...)
+
+3) Evitons de se marcher dessus
+Si une personne est sur un prefab, évitons de toucher a sa constitution
+
+
+Sur Git :
+
+1) Faites une branche par feature 
+En vrai c'est surtout, ne pushez pas sur main. N'hesitez pas a faire des branches qui partent de main, faites votre feature et ... point suivant
+
+2) Ne mergez pas sur main (dans l'immédiat)
+C'est le meilleur moyen d'avoir des conflits, mergez main dans votre branche, testez s'il y a des conflits puis mergez dans main (sinon certains commits risquent de sauter)
+
+3) Ecrivez des commits parlants
+Si vous commitez quelque chose mettez un message parlant (en anglais de preferance mais si vous ne voulez pas c'est pas grave) mais au moins un message parlant
