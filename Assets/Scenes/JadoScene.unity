@@ -193,7 +193,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 202948609}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.032419078, y: 0.08102586, z: -0.0026368538, w: 0.99618113}
+  m_LocalRotation: {x: 0.032419078, y: 0.08102587, z: -0.0026368538, w: 0.99618113}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -265,8 +265,8 @@ MonoBehaviour:
   m_YAxis:
     Value: 0.2
     m_SpeedMode: 0
-    m_MaxSpeed: 2
-    m_AccelTime: 0.2
+    m_MaxSpeed: 4
+    m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse Y
     m_InputAxisValue: -0.3
@@ -289,12 +289,12 @@ MonoBehaviour:
   m_XAxis:
     Value: 9.3
     m_SpeedMode: 0
-    m_MaxSpeed: 300
+    m_MaxSpeed: 450
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse X
     m_InputAxisValue: 0
-    m_InvertInput: 1
+    m_InvertInput: 0
     m_MinValue: -180
     m_MaxValue: 180
     m_Wrap: 1
@@ -765,7 +765,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1200360346}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.014293693, y: 0.08106042, z: -0.0011625985, w: 0.99660605}
+  m_LocalRotation: {x: 0.014293688, y: 0.081060424, z: -0.0011625983, w: 0.99660605}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -844,7 +844,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1254350862}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0037885497, y: 0.08106817, z: 0.00030814722, w: 0.99670136}
+  m_LocalRotation: {x: -0.0037885492, y: 0.08106818, z: 0.00030814725, w: 0.9967013}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1260,6 +1260,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3319389627152872511, guid: 986b1ae9c3c925a459c85e8d9868d667, type: 3}
+      propertyPath: _camTransform
+      value: 
+      objectReference: {fileID: 584057539}
     - target: {fileID: 4218063653095143098, guid: 986b1ae9c3c925a459c85e8d9868d667, type: 3}
       propertyPath: m_Name
       value: Player
