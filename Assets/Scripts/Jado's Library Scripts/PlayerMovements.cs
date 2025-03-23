@@ -1,64 +1,126 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class PlayerMovements : MonoBehaviour
+public class PersonnageController : MonoBehaviour
 {
-   [SerializeField] private CharacterController _controller;
-   [SerializeField] private float _speed;
+    [Header("Mouvement du Personnage")]
+    public float speed = 5f;
+    public float rotationSpeed = 10f;
 
-    float turnSmoothVelocity;
-    public float turnMoveTime = 0.1f;
-    [SerializeField] private Transform _camTransform;
+    [Header("Paramètres de la Caméra")]
+    public Transform cameraTransform;
+    public float distanceFromPlayer = 5f;
+    public float heightOffset = 2f;
+    public float cameraRotationSpeed = 2f;
+    public float verticalRotationSpeed = 1.5f;
+    public float cameraAngleOffset = -45f;
 
-    [SerializeField] private Rigidbody _rb;
-    [SerializeField]  private bool _isOnTheFloor = true;
+    [Header("Limites de Rotation Verticale")]
+    public float minPitch = -20f;
+    public float maxPitch = 45f;
+
+    [Header("Saut")]
+    public float jumpForce = 5f;
+    public float fallMultiplier = 2.5f;
+    public LayerMask groundLayer;
+    private bool isGrounded;
+
+    private Rigidbody rb;
+    private Vector3 movementDirection;
+    private float currentYaw;
+    private float currentPitch;
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody>();
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        currentYaw = cameraAngleOffset;
+        currentPitch = 10f;
+        UpdateCameraPosition();
     }
 
     private void Update()
     {
-        MovePlayer();
+        HandleMovement();
+        HandleCameraRotation();
+        HandleJump();
+    }
 
-        if (Input.GetKeyDown(KeyCode.Space) && _isOnTheFloor)
+    private void LateUpdate()
+    {
+        UpdateCameraPosition();
+    }
+
+    private void HandleMovement()
+    {
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+
+        Vector3 forward = cameraTransform.forward;
+        Vector3 right = cameraTransform.right;
+        forward.y = 0;
+        right.y = 0;
+        forward.Normalize();
+        right.Normalize();
+
+        movementDirection = forward * vertical + right * horizontal;
+
+        if (movementDirection.magnitude >= 0.1f)
         {
-            Jump();
+            rb.MovePosition(transform.position + movementDirection * speed * Time.deltaTime);
+            Quaternion targetRotation = Quaternion.LookRotation(movementDirection);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
     }
 
-    private void MovePlayer()
+    private void HandleCameraRotation()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-        Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;
+        float mouseX = Input.GetAxis("Mouse X");
+        float mouseY = Input.GetAxis("Mouse Y");
 
-        //if (direction.magnitude >= 0.1f)
-        //{
-        //    float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + _camTransform.eulerAngles.y;
-        //    float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnMoveTime);
-        //    transform.rotation = Quaternion.Euler(0, angle, 0);
-
-        //    Vector3 moveDir = Quaternion.Euler(0, angle, 0) * Vector3.forward;
-        //    _controller.Move(direction * _speed * Time.deltaTime);
-
-        //}
-
+        currentYaw += mouseX * cameraRotationSpeed; 
+        currentPitch -= mouseY * verticalRotationSpeed;
+        currentPitch = Mathf.Clamp(currentPitch, minPitch, maxPitch); 
     }
 
-    private void Jump()
+    private void HandleJump()
     {
-        _rb.AddForce(new Vector3(0, 5, 0), ForceMode.Impulse);
-        _isOnTheFloor = false;
+        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
+            isGrounded = false;
+        }
+
+        if (rb.velocity.y < 0)
+        {
+            rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.name == "Floor")
+        if (((1 << collision.gameObject.layer) & groundLayer) != 0)
         {
-            _isOnTheFloor = true;
+            isGrounded = true;
         }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (((1 << collision.gameObject.layer) & groundLayer) != 0)
+        {
+            isGrounded = false;
+        }
+    }
+
+    private void UpdateCameraPosition()
+    {
+        Quaternion rotation = Quaternion.Euler(currentPitch, currentYaw, 0);
+        Vector3 offset = rotation * new Vector3(0, 0, -distanceFromPlayer);
+        cameraTransform.position = transform.position + offset + Vector3.up * heightOffset;
+        cameraTransform.LookAt(transform.position + Vector3.up * 1.5f);
     }
 }
