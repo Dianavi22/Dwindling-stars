@@ -8,7 +8,7 @@ public class PersonnageController : MonoBehaviour
     public float speed = 5f;
     public float rotationSpeed = 10f;
 
-    [Header("Paramètres de la Caméra")]
+    [Header("Paramï¿½tres de la Camï¿½ra")]
     public Transform cameraTransform;
     public float distanceFromPlayer = 5f;
     public float heightOffset = 2f;
@@ -90,13 +90,13 @@ public class PersonnageController : MonoBehaviour
     {
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
-            rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce, rb.linearVelocity.z);
             isGrounded = false;
         }
 
-        if (rb.velocity.y < 0)
+        if (rb.linearVelocity.y < 0)
         {
-            rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+            rb.linearVelocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
         }
     }
 

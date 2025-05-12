@@ -21,8 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: GrassMat
-  m_Shader: {fileID: -6465566751694194690, guid: 773e8acbdb9568446ac37d5b1932c3fb,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 773e8acbdb9568446ac37d5b1932c3fb, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
@@ -68,7 +67,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Main_Text:
-        m_Texture: {fileID: 2800000, guid: f14b7870c6aec79489ad4b78a79a5fc4, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
