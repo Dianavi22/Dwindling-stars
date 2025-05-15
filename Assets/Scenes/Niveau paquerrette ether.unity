@@ -836,6 +836,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3757006552589193157, guid: be8b7a9d0c32521478a26100aa98c998, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: d878610dee2942b45b5e774d23b05a2e, type: 2}
     - target: {fileID: 919132149155446097, guid: be8b7a9d0c32521478a26100aa98c998, type: 3}
       propertyPath: m_Name
       value: Standard WalkVF
