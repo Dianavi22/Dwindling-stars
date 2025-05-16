@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PersonnageController : MonoBehaviour
@@ -8,7 +9,7 @@ public class PersonnageController : MonoBehaviour
     public float speed = 5f;
     public float rotationSpeed = 10f;
 
-    [Header("Param�tres de la Cam�ra")]
+    [Header("Paramètres de la Caméra")]
     public Transform cameraTransform;
     public float distanceFromPlayer = 5f;
     public float heightOffset = 2f;
@@ -31,9 +32,12 @@ public class PersonnageController : MonoBehaviour
     private float currentYaw;
     private float currentPitch;
 
+   [SerializeField] private Animator animator; 
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
@@ -47,6 +51,9 @@ public class PersonnageController : MonoBehaviour
         HandleMovement();
         HandleCameraRotation();
         HandleJump();
+
+    
+
     }
 
     private void LateUpdate()
@@ -73,6 +80,12 @@ public class PersonnageController : MonoBehaviour
             rb.MovePosition(transform.position + movementDirection * speed * Time.deltaTime);
             Quaternion targetRotation = Quaternion.LookRotation(movementDirection);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+
+            animator.SetBool("isRunning", true); // Active l'animation de course
+        }
+        else
+        {
+            animator.SetBool("isRunning", false); // Arrête l'animation si le joueur est à l'arrêt
         }
     }
 
@@ -81,9 +94,9 @@ public class PersonnageController : MonoBehaviour
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
 
-        currentYaw += mouseX * cameraRotationSpeed; 
+        currentYaw += mouseX * cameraRotationSpeed;
         currentPitch -= mouseY * verticalRotationSpeed;
-        currentPitch = Mathf.Clamp(currentPitch, minPitch, maxPitch); 
+        currentPitch = Mathf.Clamp(currentPitch, minPitch, maxPitch);
     }
 
     private void HandleJump()
@@ -92,6 +105,7 @@ public class PersonnageController : MonoBehaviour
         {
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce, rb.linearVelocity.z);
             isGrounded = false;
+            animator.SetTrigger("Jump"); // Déclenche l'animation de saut
         }
 
         if (rb.linearVelocity.y < 0)
