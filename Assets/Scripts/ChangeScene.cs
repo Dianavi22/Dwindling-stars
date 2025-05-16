@@ -24,7 +24,7 @@ private void OnCollisionEnter(Collision other)
             else
             {
                 // insérer condition paquerettes
-                SceneManager.LoadScene(sceneLoaded.buildIndex + 1);
+                SceneManager.LoadScene(0);
             }
         }
        
