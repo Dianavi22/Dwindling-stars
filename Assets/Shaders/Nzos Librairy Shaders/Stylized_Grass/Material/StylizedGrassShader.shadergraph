@@ -2883,7 +2883,7 @@
     "m_Title": "HeightBlend",
     "m_Position": {
         "x": -1996.0,
-        "y": 778.4000854492188
+        "y": 778.400146484375
     }
 }
 
@@ -7702,7 +7702,7 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
-    "m_Value": 50.0,
+    "m_Value": 100.0,
     "m_FloatType": 0,
     "m_RangeValues": {
         "x": 0.0,
@@ -8295,7 +8295,7 @@
     "m_Title": "Shadow or Bottom Color",
     "m_Position": {
         "x": -1994.800048828125,
-        "y": 204.00006103515626
+        "y": 204.0001220703125
     }
 }
 
@@ -9298,7 +9298,7 @@
     "m_Title": "TerrainColor",
     "m_Position": {
         "x": -2205.199951171875,
-        "y": -183.60003662109376
+        "y": -183.5999755859375
     }
 }
 
