@@ -49,8 +49,8 @@ Material:
     - _QueueOffset: 0
     - _WobbleAmount: 0.1
     - _WobbleDistance: 0.1
-    - _WobbleFrequency: 1.25
-    - _WobbleSpeed: 0.1
+    - _WobbleFrequency: 0.73
+    - _WobbleSpeed: 0.46
     m_Colors:
     - _Color: {r: 0, g: 6.498019, b: 0.63649327, a: 1}
     - _NoiseSpeed: {r: 0, g: -0.06, b: 0, a: 0}
