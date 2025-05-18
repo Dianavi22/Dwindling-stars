@@ -13,10 +13,12 @@ public class DeathPlane : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            playerTransform.position = playerPosition;
-        }
+        Debug.Log("kill");
+        playerTransform.position = playerPosition;
+        //if (other.gameObject.CompareTag("Player"))
+        //{
+          //  playerTransform.position = playerPosition;
+        //}
 
 
     }
