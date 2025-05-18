@@ -8,7 +8,7 @@ public class DeathPlane : MonoBehaviour
     private Vector3 playerPosition;
     void Start()
     {
-        playerPosition = playerTransform.position;
+        playerPosition =new Vector3(19, 26, 35) ;
      }
 
     private void OnCollisionEnter(Collision other)
