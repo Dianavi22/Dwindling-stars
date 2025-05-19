@@ -140,7 +140,7 @@ Material:
     - _SrcBlendAlpha: 1
     - _Surface: 0
     - _TerrainOffset: 0
-    - _TerrainSize: 50
+    - _TerrainSize: 200
     - _USETERRAINCOLOR: 1
     - _WindHeight: 0.5
     - _WindIntensity: 0.2
@@ -153,8 +153,8 @@ Material:
     - _BottomColor: {r: 0, g: 1, b: 0.7226217, a: 0}
     - _Color: {r: 0.052902628, g: 0.04313726, b: 0.38039216, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FarColor: {r: 0.03396231, g: 0.8580912, b: 1, a: 0}
-    - _NearColor: {r: 0, g: 0.80617094, b: 1, a: 0}
+    - _FarColor: {r: 0.495283, g: 0.9261388, b: 1, a: 0}
+    - _NearColor: {r: 0, g: 0.4496486, b: 0.5566038, a: 0}
     - _NearFarRange: {r: 3.75, g: 17, b: 0, a: 0}
     - _ShadowColor: {r: 0.09070838, g: 0.09291541, b: 0.34339616, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
