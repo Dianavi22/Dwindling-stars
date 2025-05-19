@@ -173,7 +173,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  animator: {fileID: 0}
+  animator: {fileID: 108211399999603597}
 --- !u!54 &4135542164641493706
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -239,7 +239,7 @@ MonoBehaviour:
   crosshair: {fileID: 0}
   maxDistance: 100
   maxFlowers: 5
-  porte: {fileID: 0}
+  porte: {fileID: 9187378148696756189}
 --- !u!1 &9184241140767078301
 GameObject:
   m_ObjectHideFlags: 0
