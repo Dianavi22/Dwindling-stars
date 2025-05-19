@@ -14,9 +14,10 @@ private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            Debug.Log("Collision detected");
             if (sceneLoaded.buildIndex != 2)
             {
-                SceneManager.LoadScene(sceneLoaded.buildIndex + 1);
+                SceneManager.LoadScene(2);
 
             }
             else
