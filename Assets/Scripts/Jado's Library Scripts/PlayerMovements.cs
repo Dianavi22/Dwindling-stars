@@ -7,6 +7,7 @@ public class PersonnageController : MonoBehaviour
 {
     [Header("Mouvement du Personnage")]
     public float speed = 5f;
+    public float sprintMultiplier = 2f; // Multiplicateur de sprint
     public float rotationSpeed = 10f;
 
     [Header("Paramètres de la Caméra")]
@@ -32,7 +33,7 @@ public class PersonnageController : MonoBehaviour
     private float currentYaw;
     private float currentPitch;
 
-   [SerializeField] private Animator animator; 
+    [SerializeField] private Animator animator;
 
     private void Start()
     {
@@ -51,9 +52,6 @@ public class PersonnageController : MonoBehaviour
         HandleMovement();
         HandleCameraRotation();
         HandleJump();
-
-    
-
     }
 
     private void LateUpdate()
@@ -75,9 +73,16 @@ public class PersonnageController : MonoBehaviour
 
         movementDirection = forward * vertical + right * horizontal;
 
+        // Sprint si Maj Gauche est enfoncé
+        float finalSpeed = speed;
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            finalSpeed *= sprintMultiplier;
+        }
+
         if (movementDirection.magnitude >= 0.1f)
         {
-            rb.MovePosition(transform.position + movementDirection * speed * Time.deltaTime);
+            rb.MovePosition(transform.position + movementDirection * finalSpeed * Time.deltaTime);
             Quaternion targetRotation = Quaternion.LookRotation(movementDirection);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
