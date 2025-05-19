@@ -8,15 +8,17 @@ public class DeathPlane : MonoBehaviour
     private Vector3 playerPosition;
     void Start()
     {
-        playerPosition = playerTransform.position;
+        playerPosition =new Vector3(18, -0.5f, 38);
      }
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            playerTransform.position = playerPosition;
-        }
+        Debug.Log("kill");
+        playerTransform.position = playerPosition;
+        //if (other.gameObject.CompareTag("Player"))
+        //{
+          //  playerTransform.position = playerPosition;
+        //}
 
 
     }
