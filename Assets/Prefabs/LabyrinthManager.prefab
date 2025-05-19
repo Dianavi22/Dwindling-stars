@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8783783078393641292
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7057561613689946848}
+  - component: {fileID: 8061686713214811891}
+  m_Layer: 0
+  m_Name: LabyrinthManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7057561613689946848
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8783783078393641292}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -11.08, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8061686713214811891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8783783078393641292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05000b07865bb07479d2612930d68c45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fieldWidth: 20
+  fieldHeight: 20
+  sphereSpacing: 4.03
+  spherePrefab: {fileID: 8573485741919656306, guid: 3a23f3294bad6c44090dea8266c3739d, type: 3}
+  player: {fileID: 0}
+  proximityThreshold: 5
+  pathColor: {r: 0.9478675, g: 0.9735849, b: 0.9478675, a: 1}
+  nonPathColor: {r: 0, g: 0, b: 0, a: 0}
+  defaultColor: {r: 0, g: 0, b: 0, a: 0.2901961}
+  pathStrings:
+  - XOXXXXXXXXXXXXXXXXXX
+  - XOXXXXXXXXXXXXXXXXXX
+  - XOXXXXXXXXXXXXXOOOOX
+  - XOOOOOOOOOXXXXXXXXXX
+  - XXXXXXXXXOXXXXXXXXXX
+  - XXXXXXXXXOXXXXXXXXXX
+  - XXXXXXXXXOXXXXXXXXXX
+  - XXXXXXXXXOOOOOXXXXXX
+  - XXXXXXXXXXXXXOXXXXXX
+  - XXXXXXXXXXXXXOXXXXXX
+  - XXXXXXXXXXXXXOXXXXXX
+  - XXXXXXXXXXXXXOXXXXXX
+  - XXXXXXXXXXXXXOXXXXXX
+  - XXXXXXXXXXXXXOOOOXXX
+  - XXXXXXXXXXXXXXXXOXXX
+  - XXXXXXXXXXXXXXXXOXXX
+  - XXXXXXXXXXXXXXOOOXXX
+  - XXXXXXXXXXXXXXOXXXXX
+  - 'XXXXXXXXXXXXXXOXXXXX '
+  - XXXXXXXXXXXXXXOXXXXX
