@@ -2882,8 +2882,8 @@
     "m_ObjectId": "2835cc92c6674943aed86271a94170f7",
     "m_Title": "HeightBlend",
     "m_Position": {
-        "x": -1996.0,
-        "y": 778.400146484375
+        "x": -1996.000244140625,
+        "y": 778.3994750976563
     }
 }
 
@@ -3964,8 +3964,8 @@
     "m_ObjectId": "4449b343dc644d9b90e7437d7b0e46b9",
     "m_Title": "Wind Noise Texture",
     "m_Position": {
-        "x": -2784.800048828125,
-        "y": -1499.1998291015625
+        "x": -2784.80029296875,
+        "y": -1499.199951171875
     }
 }
 
@@ -7702,7 +7702,7 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
-    "m_Value": 100.0,
+    "m_Value": 50.0,
     "m_FloatType": 0,
     "m_RangeValues": {
         "x": 0.0,
@@ -8294,8 +8294,8 @@
     "m_ObjectId": "b7aaabf1b36f43abb852815ee4ca8dda",
     "m_Title": "Shadow or Bottom Color",
     "m_Position": {
-        "x": -1994.800048828125,
-        "y": 204.0001220703125
+        "x": -1994.80029296875,
+        "y": 203.99951171875
     }
 }
 
@@ -8596,8 +8596,8 @@
     "m_ObjectId": "bcba13e8a3164109a212f5cf3aec8a32",
     "m_Title": "GrassSway",
     "m_Position": {
-        "x": -1006.0,
-        "y": -1526.4000244140625
+        "x": -1006.000244140625,
+        "y": -1526.400146484375
     }
 }
 
@@ -9297,8 +9297,8 @@
     "m_ObjectId": "d3a55e08dfd54280959ac990242c005f",
     "m_Title": "TerrainColor",
     "m_Position": {
-        "x": -2205.199951171875,
-        "y": -183.5999755859375
+        "x": -2205.200439453125,
+        "y": -183.6005096435547
     }
 }
 
@@ -10135,8 +10135,8 @@
     "m_ObjectId": "edebee939a8940fa86f2e7e3d3ab4130",
     "m_Title": "Depth",
     "m_Position": {
-        "x": -2456.800048828125,
-        "y": -758.4000244140625
+        "x": -2456.80029296875,
+        "y": -758.400390625
     }
 }
 
