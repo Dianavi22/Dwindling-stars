@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,10 +14,14 @@ public class GrabFlower : MonoBehaviour
     public int maxFlowers = 2;
     public GameObject porte;
 
+    public TMP_Text actual;
+    public TMP_Text max;
+
+
     private void Start()
     {
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        
+        max.text = "/ "+maxFlowers.ToString();
     }
 
 
@@ -26,6 +31,7 @@ public class GrabFlower : MonoBehaviour
     {
         checkNbFlowers();
         CheckTargetInSight();
+        actual.text = count.ToString();
     }
 
     void checkNbFlowers()
