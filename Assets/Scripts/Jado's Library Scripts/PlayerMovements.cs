@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PersonnageController : MonoBehaviour
@@ -73,12 +72,8 @@ public class PersonnageController : MonoBehaviour
 
         movementDirection = forward * vertical + right * horizontal;
 
-        // Sprint si Maj Gauche est enfoncé
-        float finalSpeed = speed;
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            finalSpeed *= sprintMultiplier;
-        }
+        bool isSprinting = Input.GetKey(KeyCode.LeftShift);
+        float finalSpeed = isSprinting ? speed * sprintMultiplier : speed;
 
         if (movementDirection.magnitude >= 0.1f)
         {
@@ -86,11 +81,13 @@ public class PersonnageController : MonoBehaviour
             Quaternion targetRotation = Quaternion.LookRotation(movementDirection);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
-            animator.SetBool("isRunning", true); // Active l'animation de course
+            animator.SetBool("isRunning", true);
+            animator.SetBool("isFastRun", isSprinting); // Sprint animation activée
         }
         else
         {
-            animator.SetBool("isRunning", false); // Arrête l'animation si le joueur est à l'arrêt
+            animator.SetBool("isRunning", false);
+            animator.SetBool("isFastRun", false); // Sprint désactivé si pas de mouvement
         }
     }
 
@@ -110,7 +107,7 @@ public class PersonnageController : MonoBehaviour
         {
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce, rb.linearVelocity.z);
             isGrounded = false;
-            animator.SetTrigger("Jump"); // Déclenche l'animation de saut
+            animator.SetTrigger("Jump");
         }
 
         if (rb.linearVelocity.y < 0)
