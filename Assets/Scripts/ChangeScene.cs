@@ -14,14 +14,13 @@ private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (sceneLoaded.buildIndex != 2)
+            if (sceneLoaded.buildIndex == 1)
             {
-                SceneManager.LoadScene(sceneLoaded.buildIndex + 1);
+                SceneManager.LoadScene(2);
 
             }
-            else
+            else if(sceneLoaded.buildIndex==2)
             {
-                // insérer condition paquerettes
                 SceneManager.LoadScene(0);
             }
         }
