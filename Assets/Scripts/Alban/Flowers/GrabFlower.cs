@@ -22,6 +22,7 @@ public class GrabFlower : MonoBehaviour
     {
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         max.text = "/ "+maxFlowers.ToString();
+        porte.SetActive(false);
     }
 
 
