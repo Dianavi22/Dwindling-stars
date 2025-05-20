@@ -17,6 +17,9 @@ public class GrabFlower : MonoBehaviour
     public TMP_Text actual;
     public TMP_Text max;
 
+    public Color colorCursorOff;
+    public Color colorCursorOn;
+
 
     private void Start()
     {
@@ -58,21 +61,24 @@ public class GrabFlower : MonoBehaviour
             if (hit.collider.gameObject.CompareTag("Flower"))
             {
                 
-                crosshair.color = Color.red;
+                crosshair.color = colorCursorOn;
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     count++;
 
                     Destroy(hit.collider.gameObject);
-                    crosshair.color = Color.white;
+                    crosshair.color = colorCursorOff;
                 }
             }
             else
             {
-                crosshair.color = Color.white;
+                crosshair.color = colorCursorOff;
             }
 
         }
-        
+        else
+        {
+            crosshair.color = colorCursorOff;
+        }
     }
 }

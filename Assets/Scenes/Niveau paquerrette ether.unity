@@ -7582,6 +7582,38 @@ PrefabInstance:
       propertyPath: maxDistance
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1895629580276293102, guid: 986b1ae9c3c925a459c85e8d9868d667, type: 3}
+      propertyPath: colorCursorOn.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895629580276293102, guid: 986b1ae9c3c925a459c85e8d9868d667, type: 3}
+      propertyPath: colorCursorOn.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895629580276293102, guid: 986b1ae9c3c925a459c85e8d9868d667, type: 3}
+      propertyPath: colorCursorOn.g
+      value: 0.9161594
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895629580276293102, guid: 986b1ae9c3c925a459c85e8d9868d667, type: 3}
+      propertyPath: colorCursorOn.r
+      value: 0.5849057
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895629580276293102, guid: 986b1ae9c3c925a459c85e8d9868d667, type: 3}
+      propertyPath: colorCursorOff.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895629580276293102, guid: 986b1ae9c3c925a459c85e8d9868d667, type: 3}
+      propertyPath: colorCursorOff.b
+      value: 0.5878248
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895629580276293102, guid: 986b1ae9c3c925a459c85e8d9868d667, type: 3}
+      propertyPath: colorCursorOff.g
+      value: 0.842203
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895629580276293102, guid: 986b1ae9c3c925a459c85e8d9868d667, type: 3}
+      propertyPath: colorCursorOff.r
+      value: 0.9056604
+      objectReference: {fileID: 0}
     - target: {fileID: 2979913172084540583, guid: 986b1ae9c3c925a459c85e8d9868d667, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.201
@@ -7623,12 +7655,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3319389627152872511, guid: 986b1ae9c3c925a459c85e8d9868d667, type: 3}
+      propertyPath: speed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3319389627152872511, guid: 986b1ae9c3c925a459c85e8d9868d667, type: 3}
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 1277014002}
     - target: {fileID: 3319389627152872511, guid: 986b1ae9c3c925a459c85e8d9868d667, type: 3}
       propertyPath: sprintMultiplier
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4218063653095143098, guid: 986b1ae9c3c925a459c85e8d9868d667, type: 3}
       propertyPath: m_Name
