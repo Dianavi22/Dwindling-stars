@@ -7,6 +7,7 @@ public class ChangeScene : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     public int indexScene;
+    public GameObject endCanva;
     void Start()
     {
         print(indexScene);
@@ -23,7 +24,10 @@ public class ChangeScene : MonoBehaviour
             }
             else if (indexScene == 2)
             {
-                print("showEndGame");
+                endCanva.SetActive(true);
+                Time.timeScale = 0;
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
         }
     }
