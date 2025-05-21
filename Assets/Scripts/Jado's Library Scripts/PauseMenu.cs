@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    [HideInInspector] public static bool gameIsPaused = false;
+ public  bool gameIsPaused = false;
     [Header("Canva Menu Pause")]
     [SerializeField] GameObject _pauseMenuUI;
     void Update()
@@ -14,6 +14,18 @@ public class PauseMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (gameIsPaused) { Resume(); } else { Paused(); }
+        }
+
+        if (gameIsPaused)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            return;
+        }
+        else
+        {
+            //   Cursor.lockState = CursorLockMode.Locked;
+           // Cursor.visible = false;
         }
     }
 

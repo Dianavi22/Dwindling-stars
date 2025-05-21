@@ -6,7 +6,7 @@ public class PersonnageController : MonoBehaviour
 {
     [Header("Mouvement du Personnage")]
     public float speed = 5f;
-    public float sprintMultiplier = 2f; // Multiplicateur de sprint
+    public float sprintMultiplier = 2f;
     public float rotationSpeed = 10f;
 
     [Header("Paramètres de la Caméra")]
@@ -34,27 +34,37 @@ public class PersonnageController : MonoBehaviour
 
     [SerializeField] private Animator animator;
 
+
+    // Référence au script PauseMenu
+    public PauseMenu pauseMenu;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
         currentYaw = cameraAngleOffset;
         currentPitch = 10f;
         UpdateCameraPosition();
+
+      
     }
 
     private void Update()
     {
+        if (pauseMenu.gameIsPaused) return;
+
         HandleMovement();
         HandleCameraRotation();
         HandleJump();
     }
 
+
     private void LateUpdate()
     {
+        if ( pauseMenu.gameIsPaused) return;
+
         UpdateCameraPosition();
     }
 
@@ -82,12 +92,12 @@ public class PersonnageController : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
             animator.SetBool("isRunning", true);
-            animator.SetBool("isFastRun", isSprinting); // Sprint animation activée
+            animator.SetBool("isFastRun", isSprinting);
         }
         else
         {
             animator.SetBool("isRunning", false);
-            animator.SetBool("isFastRun", false); // Sprint désactivé si pas de mouvement
+            animator.SetBool("isFastRun", false);
         }
     }
 
