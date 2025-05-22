@@ -1505,12 +1505,12 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 701f49cd65ad3b7428b12a1dfd5822ef, type: 3}
-  m_Resource: {fileID: 8300000, guid: 701f49cd65ad3b7428b12a1dfd5822ef, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e738381d5f5354549baf6e11c8a6fc49, type: 3}
+  m_Resource: {fileID: 8300000, guid: e738381d5f5354549baf6e11c8a6fc49, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -3439,7 +3439,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.89
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -6543,7 +6543,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1277013999}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!20 &1277014001
 Camera:
   m_ObjectHideFlags: 0
@@ -6686,7 +6686,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.86
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -8802,7 +8802,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.87
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -9981,7 +9981,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3319389627152872511, guid: 986b1ae9c3c925a459c85e8d9868d667, type: 3}
       propertyPath: speed
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3319389627152872511, guid: 986b1ae9c3c925a459c85e8d9868d667, type: 3}
       propertyPath: pauseMenu
@@ -9993,7 +9993,7 @@ PrefabInstance:
       objectReference: {fileID: 1277014002}
     - target: {fileID: 3319389627152872511, guid: 986b1ae9c3c925a459c85e8d9868d667, type: 3}
       propertyPath: sprintMultiplier
-      value: 3
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 4079443346414076599, guid: 986b1ae9c3c925a459c85e8d9868d667, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -10398,7 +10398,7 @@ TerrainCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_TerrainData: {fileID: 15600000, guid: 131bddaa83808b34dbd8440c522bf965, type: 2}
   m_EnableTreeColliders: 1
